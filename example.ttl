@@ -1,0 +1,62 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#>.
+@prefix ccs: <https://ontology.acomagu.me/ccs#>.
+@base <https://rdf.acomagu.me/ccs/1>.
+
+<#character> a ccs:Character;
+	foaf:name "すー"@ja;
+	vcard:title "アパレルショップスタッフ"@ja;
+	ccs:str 10;
+	ccs:con 8;
+	ccs:pow 12;
+	ccs:dex 13;
+	ccs:app 15;
+	ccs:siz 12;
+	ccs:int 10;
+	ccs:edu 13;
+	ccs:hp 10;
+	ccs:mp 12;
+	ccs:san 60;
+	ccs:has_skill <#fistPunch>;
+	ccs:has_skill <#firstAid>;
+	ccs:has_skill <#looksmith>;
+	ccs:has_skill <#spotHidden>;
+	ccs:has_skill <#craft>;
+	ccs:has_skill <#disguise>;
+	ccs:has_skill <#persuade>;
+	ccs:has_skill <#art>;
+	ccs:has_skill <#accounting>;
+	ccs:has_skill <#psychology>.
+
+<#fistPunch> a ccs:Skill;
+	ccs:chance 80;
+	ccs:kind "パンチ"@ja.
+
+<#firstAid> a ccs:Skill;
+	ccs:chance 60.
+
+<#looksmith> a ccs:Skill;
+	ccs:chance 41.
+
+<#spotHidden> a ccs:Skill;
+	ccs:chance 85.
+
+<#craft> a ccs:Skill;
+	ccs:chance 35;
+	ccs:kind "衣服"@ja.
+
+<#disguise> a ccs:Skill;
+	ccs:chance 31.
+
+<#persuade> a ccs:Skill;
+	ccs:chance 75.
+
+<#art> a ccs:Skill;
+	ccs:chance 15;
+	ccs:kind "衣服"@ja.
+
+<#accounting> a ccs:Skill;
+	ccs:chance 20.
+
+<#psychology> a ccs:Skill;
+	ccs:chance 65.
