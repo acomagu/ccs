@@ -1,0 +1,402 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix ccs: <https://ontology.acomagu.me/ccs#>.
+
+<https://ontology.acomagu.me/ontology/ccs#> a owl:Ontology;
+	dc:title "The Call of Cthulhu Character Ontology";
+	rdfs:comment """
+This ontology is for describing a character of Call of Cthulhu TRPG. This is
+designed that the character can include whole informations of the character
+sheet.
+""";
+	owl:versionIRI <https://ontology.acomagu.me/ccs/0.1#>;
+	owl:versionInfo "$Date: 2018/12/25 00:00:00 $".
+
+ccs:Character a rdfs:Class;
+	rdfs:label "Character";
+  rdfs:comment "Any character for Call of Cthulhu.".
+
+ccs:str a owl:DatatypeProperty;
+	rdfs:label "STR";
+	rdfs:comment "STR";
+	rdfs:domain ccs:Character;
+	rdfs:range rdfs:Literal.
+
+ccs:con a owl:DatatypeProperty;
+	rdfs:label "CON";
+	rdfs:comment "CON";
+	rdfs:domain ccs:Character;
+	rdfs:range rdfs:Literal.
+
+ccs:pow a owl:DatatypeProperty;
+	rdfs:label "POW";
+	rdfs:comment "POW";
+	rdfs:domain ccs:Character;
+	rdfs:range rdfs:Literal.
+
+ccs:dex a owl:DatatypeProperty;
+	rdfs:label "DEX";
+	rdfs:comment "DEX";
+	rdfs:domain ccs:Character;
+	rdfs:range rdfs:Literal.
+
+ccs:app a owl:DatatypeProperty;
+	rdfs:label "APP";
+	rdfs:comment "APP";
+	rdfs:domain ccs:Character;
+	rdfs:range rdfs:Literal.
+
+ccs:siz a owl:DatatypeProperty;
+	rdfs:label "SIZ";
+	rdfs:comment "SIZ";
+	rdfs:domain ccs:Character;
+	rdfs:range rdfs:Literal.
+
+ccs:int a owl:DatatypeProperty;
+	rdfs:label "INT";
+	rdfs:comment "INT";
+	rdfs:domain ccs:Character;
+	rdfs:range rdfs:Literal.
+
+ccs:edu a owl:DatatypeProperty;
+	rdfs:label "EDU";
+	rdfs:comment "EDU";
+	rdfs:domain ccs:Character;
+	rdfs:range rdfs:Literal.
+
+ccs:hp a owl:DatatypeProperty;
+	rdfs:label "HP";
+	rdfs:comment "HP";
+	rdfs:domain ccs:Character;
+	rdfs:range rdfs:Literal.
+
+ccs:mp a owl:DatatypeProperty;
+	rdfs:label "MP";
+	rdfs:comment "MP";
+	rdfs:domain ccs:Character;
+	rdfs:range rdfs:Literal.
+
+ccs:san a owl:DatatypeProperty;
+	rdfs:label "SAN";
+	rdfs:comment "SAN";
+	rdfs:domain ccs:Character;
+	rdfs:range rdfs:Literal.
+
+ccs:hasSkill a owl:ObjectProperty;
+	rdfs:label "has_skill";
+	rdfs:domain ccs:Character;
+	rdfs:range ccs:Skill;
+	rdfs:comment "Defiens a character has a skill especially. If a skill is omitted for a character, the character has the skill with the base chance.".
+
+ccs:kind a owl:DatatypeProperty;
+	rdfs:label "kind";
+	rdfs:domain ccs:OwnLanguage, ccs:OtherLanguage, ccs:Art, ccs:DriveAutomobile, ccs:Craft, ccs:Pilot;
+	rdfs:range rdfs:Literal;
+	rdfs:comment "Specifies the kind of a skill. For example, what language, what vehicle does be driven, etc..".
+
+ccs:chance a owl:DatatypeProperty;
+	rdfs:label "chance";
+	rdfs:domain ccs:Skill;
+	rdfs:range rdfs:Literal;
+	rdfs:comment "Defines the skill's chance percentage. e.g. 80.".
+
+ccs:Skill a owl:Class;
+	rdfs:label "Skill";
+	rdfs:comment "Skill".
+
+ccs:Accounting a owl:Class;
+	rdfs:label "Accounting";
+	rdfs:comment "Accounting";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Anthropology a owl:Class;
+	rdfs:label "Anthropology";
+	rdfs:comment "Anthropology";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Archaeology a owl:Class;
+	rdfs:label "Archaeology";
+	rdfs:comment "Archaeology";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Art a owl:Class;
+	rdfs:label "Art";
+	rdfs:comment "Art";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Astronomy a owl:Class;
+	rdfs:label "Astronomy";
+	rdfs:comment "Astronomy";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Bargain a owl:Class;
+	rdfs:label "Bargain";
+	rdfs:comment "Bargain";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Biology a owl:Class;
+	rdfs:label "Biology";
+	rdfs:comment "Biology";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Chemistry a owl:Class;
+	rdfs:label "Chemistry";
+	rdfs:comment "Chemistry";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Climb a owl:Class;
+	rdfs:label "Climb";
+	rdfs:comment "Climb";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Conceal a owl:Class;
+	rdfs:label "Conceal";
+	rdfs:comment "Conceal";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Craft a owl:Class;
+	rdfs:label "Craft";
+	rdfs:comment "Craft";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:CreditRating a owl:Class;
+	rdfs:label "Credit Rating";
+	rdfs:comment "Credit Rating";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:CthulhuMythos a owl:Class;
+	rdfs:label "Cthulhu Mythos";
+	rdfs:comment "Cthulhu Mythos";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Disguise a owl:Class;
+	rdfs:label "Disguise";
+	rdfs:comment "Disguise";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Dodge a owl:Class;
+	rdfs:label "Dodge";
+	rdfs:comment "Dodge";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:DriveAutomobile a owl:Class;
+	rdfs:label "Drive Automobile";
+	rdfs:comment "Drive Automobile";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:ElectricalRepair a owl:Class;
+	rdfs:label "Electrical Repair";
+	rdfs:comment "Electrical Repair";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:FastTalk a owl:Class;
+	rdfs:label "Fast Talk";
+	rdfs:comment "Fast Talk";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:FirstAid a owl:Class;
+	rdfs:label "First Aid";
+	rdfs:comment "First Aid";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:FistPunch a owl:Class;
+	rdfs:label "Fist Punch";
+	rdfs:comment "Fist Punch";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Geology a owl:Class;
+	rdfs:label "Geology";
+	rdfs:comment "Geology";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Grapple a owl:Class;
+	rdfs:label "Grapple";
+	rdfs:comment "Grapple";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Handgun a owl:Class;
+	rdfs:label "Handgun";
+	rdfs:comment "Handgun";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:HeadButt a owl:Class;
+	rdfs:label "Head Butt";
+	rdfs:comment "Head Butt";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Hide a owl:Class;
+	rdfs:label "Hide";
+	rdfs:comment "Hide";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:History a owl:Class;
+	rdfs:label "History";
+	rdfs:comment "History";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Jump a owl:Class;
+	rdfs:label "Jump";
+	rdfs:comment "Jump";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Kick a owl:Class;
+	rdfs:label "Kick";
+	rdfs:comment "Kick";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Law a owl:Class;
+	rdfs:label "Law";
+	rdfs:comment "Law";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:LibraryUse a owl:Class;
+	rdfs:label "Library Use";
+	rdfs:comment "Library Use";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Listen a owl:Class;
+	rdfs:label "Listen";
+	rdfs:comment "Listen";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Locksmith a owl:Class;
+	rdfs:label "Locksmith";
+	rdfs:comment "Locksmith";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:MachineGun a owl:Class;
+	rdfs:label "Machine Gun";
+	rdfs:comment "Machine Gun";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:MartialArts a owl:Class;
+	rdfs:label "Martial Arts";
+	rdfs:comment "Martial Arts";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:MechanicalRepair a owl:Class;
+	rdfs:label "Mechanical Repair";
+	rdfs:comment "Mechanical Repair";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Medicine a owl:Class;
+	rdfs:label "Medicine";
+	rdfs:comment "Medicine";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:NaturalHistory a owl:Class;
+	rdfs:label "Natural History";
+	rdfs:comment "Natural History";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Navigate a owl:Class;
+	rdfs:label "Navigate";
+	rdfs:comment "Navigate";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Occult a owl:Class;
+	rdfs:label "Occult";
+	rdfs:comment "Occult";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:OperateHeavyMachine a owl:Class;
+	rdfs:label "Operate Heavy Machine";
+	rdfs:comment "Operate Heavy Machine";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:OtherLanguage a owl:Class;
+	rdfs:label "Other Language";
+	rdfs:comment "Other Language";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:OwnLanguage a owl:Class;
+	rdfs:label "Own Language";
+	rdfs:comment "Own Language";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Persuade a owl:Class;
+	rdfs:label "Persuade";
+	rdfs:comment "Persuade";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Pharmacy a owl:Class;
+	rdfs:label "Pharmacy";
+	rdfs:comment "Pharmacy";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Photography a owl:Class;
+	rdfs:label "Photography";
+	rdfs:comment "Photography";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Physics a owl:Class;
+	rdfs:label "Physics";
+	rdfs:comment "Physics";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Pilot a owl:Class;
+	rdfs:label "Pilot";
+	rdfs:comment "Pilot";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Psychoanalysis a owl:Class;
+	rdfs:label "Psychoanalysis";
+	rdfs:comment "Psychoanalysis";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Psychology a owl:Class;
+	rdfs:label "Psychology";
+	rdfs:comment "Psychology";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Ride a owl:Class;
+	rdfs:label "Ride";
+	rdfs:comment "Ride";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Rifle a owl:Class;
+	rdfs:label "Rifle";
+	rdfs:comment "Rifle";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Shotgun a owl:Class;
+	rdfs:label "Shotgun";
+	rdfs:comment "Shotgun";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Sneak a owl:Class;
+	rdfs:label "Sneak";
+	rdfs:comment "Sneak";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:SpotHidden a owl:Class;
+	rdfs:label "Spot Hidden";
+	rdfs:comment "Spot Hidden";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:SubmachineGun a owl:Class;
+	rdfs:label "Submachine Gun";
+	rdfs:comment "Submachine Gun";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Swim a owl:Class;
+	rdfs:label "Swim";
+	rdfs:comment "Swim";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Throw a owl:Class;
+	rdfs:label "Throw";
+	rdfs:comment "Throw";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:Track a owl:Class;
+	rdfs:label "Track";
+	rdfs:comment "Track";
+	rdfs:subClassOf ccs:Skill.
+
+ccs:MeleeWeapon a owl:Class;
+	rdfs:label "Melee Weapon";
+	rdfs:comment "Melee Weapon";
+	rdfs:subClassOf ccs:Skill.
