@@ -16,7 +16,7 @@ sheet.
 
 ccs:Character a rdfs:Class;
 	rdfs:label "Character";
-  rdfs:comment "Any character for Call of Cthulhu.".
+	rdfs:comment "Any character for Call of Cthulhu.".
 
 ccs:str a owl:DatatypeProperty;
 	rdfs:label "STR";
